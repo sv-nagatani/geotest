@@ -49,7 +49,8 @@ function monitor(position) {
 	document.getElementById("lat").innerHTML = latitude;
 	document.getElementById("lon").innerHTML = longitude;
 	document.getElementById("date").innerHTML = date.toString();
-	document.getElementById("date").innerHTML = latitude + ' ' + longitude + ' ' + date.toString(); + "<br>" + document.getElementById("date").innerHTML;
+	var txt = latitude + ' ' + longitude + ' ' + date.toString();
+	document.getElementById("record").innerHTML = txt + "<br>" + document.getElementById("record").innerHTML;
 }
 </script>
 
