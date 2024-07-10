@@ -17,6 +17,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 	
+	// Service Worker有効化
+	if ('serviceWorker' in navigator) {
+		window.addEventListener("load", function () {
+			navigator.serviceWorker.register('./assets/js/sw.js');
+		});
+	}
+
+	// 位置情報の取得
 	if (navigator.geolocation) {	// Geolocation APIが使用可能
 
 		// オプション・パラメータをセット
