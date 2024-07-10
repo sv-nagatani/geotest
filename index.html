@@ -1,6 +1,7 @@
 <html>
 
 <head>
+	<link rel="manifest" href="manifest.json" />
 </head>
 
 <body>
@@ -23,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			// 高精度を要求する
 			enableHighAccuracy: true,
 			// 最大待ち時間（ミリ秒）
-			timeout: 10000,
+			timeout: 60000,
 			// キャッシュ有効期間（ミリ秒）
-			maximumAge: 10000
+			maximumAge: 30000
 		};
 		// 現在位置情報を取得（監視）
 		navigator.geolocation.watchPosition(monitor, null, pos_opt);
