@@ -1,0 +1,52 @@
+<html>
+
+<head>
+</head>
+
+<body>
+	<span id='lat'>abc</span><br>
+	<span id='lon'>abc</span><br>
+	<span id='date'>abc</span><br>
+
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	
+	if (navigator.geolocation) {	// Geolocation APIが使用可能
+
+		// オプション・パラメータをセット
+		var pos_opt = {
+			// 高精度を要求する
+			enableHighAccuracy: true,
+			// 最大待ち時間（ミリ秒）
+			timeout: 10000,
+			// キャッシュ有効期間（ミリ秒）
+			maximumAge: 0
+		};
+		// 現在位置情報を取得（監視）
+		navigator.geolocation.watchPosition(monitor, null, pos_opt);
+	} else {
+		alert("Geolocation APIが使用できません。");
+	}
+}, false);
+
+function monitor(position) {
+	// 緯度
+	var latitude = position.coords.latitude;
+	// 経度
+	var longitude = position.coords.longitude;
+	
+	// タイムスタンプ
+	var date = position.timestamp;
+	if( typeof(date) == "number" ) {
+		date = new Date(date);
+	}
+	
+	document.getElementById("lat").innerHTML = latitude;
+	document.getElementById("lon").innerHTML = longitude;
+	document.getElementById("date").innerHTML = date.toString();
+}
+</script>
+
+</html>
