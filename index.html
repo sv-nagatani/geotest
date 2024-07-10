@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		// オプション・パラメータをセット
 		var pos_opt = {
 			// 高精度を要求する
-			enableHighAccuracy: true,
+			"enableHighAccuracy": true,
 			// 最大待ち時間（ミリ秒）
-			timeout: 60000,
+			"timeout": 20000,
 			// キャッシュ有効期間（ミリ秒）
-			maximumAge: 30000
+			"maximumAge": 10000
 		};
 		// 現在位置情報を取得（監視）
 		navigator.geolocation.watchPosition(monitor, null, pos_opt);
