@@ -8,6 +8,9 @@
 	<span id='lon'>abc</span><br>
 	<span id='date'>abc</span><br>
 
+	Record<br>
+	<span id='record'></span>
+
 </body>
 
 <script>
@@ -22,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			// 最大待ち時間（ミリ秒）
 			timeout: 10000,
 			// キャッシュ有効期間（ミリ秒）
-			maximumAge: 0
+			maximumAge: 10000
 		};
 		// 現在位置情報を取得（監視）
 		navigator.geolocation.watchPosition(monitor, null, pos_opt);
@@ -46,6 +49,7 @@ function monitor(position) {
 	document.getElementById("lat").innerHTML = latitude;
 	document.getElementById("lon").innerHTML = longitude;
 	document.getElementById("date").innerHTML = date.toString();
+	document.getElementById("date").innerHTML = latitude + ' ' + longitude + ' ' + date.toString(); + "<br>" + document.getElementById("date").innerHTML;
 }
 </script>
 
